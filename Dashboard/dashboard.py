@@ -66,7 +66,7 @@ def create_rfm_df(df):
     return rfm_df
 
 # Load cleaned data
-all_df = pd.read_csv("all_data.csv")
+all_df = pd.read_csv("https://raw.githubusercontent.com/abdul-rohman-lab/Dicoding-Store/main/Dashboard/all_data.csv")
 
 datetime_columns = ["order_date", "delivery_date"]
 all_df.sort_values(by="order_date", inplace=True)
@@ -81,7 +81,7 @@ max_date = all_df["order_date"].max()
 
 with st.sidebar:
     # Menambahkan logo perusahaan
-    st.image("https://github.com/dicodingacademy/assets/raw/main/logo.png")
+    st.image("https://raw.githubusercontent.com/abdul-rohman-lab/Dicoding-Store/main/logo.png")
     
     # Mengambil start_date & end_date dari date_input
     start_date, end_date = st.date_input(
@@ -259,4 +259,4 @@ ax[2].tick_params(axis='x', labelsize=35)
 
 st.pyplot(fig)
 
-st.caption('Copyright © Dicoding 2023')
+st.caption('Copyright © Abdul Rohman 2023')
